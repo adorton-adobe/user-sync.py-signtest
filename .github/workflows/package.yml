@@ -219,7 +219,7 @@ jobs:
          zip -r user-sync-examples.zip .
     - uses: actions/upload-artifact@v2
       with:
-        name: user-sync-artifact
+        name: examples
         path: examples/*.zip
         retention-days: 30
     - name: user-sync.tar.gz
@@ -245,7 +245,7 @@ jobs:
         tag_name: ${{ github.ref }}
         release_name: User Sync Tool ${{ github.ref }}
         body_path: .changelog/latest.md
-        draft: true
+        draft: false
         prerelease: false
 
   upload-assets:
